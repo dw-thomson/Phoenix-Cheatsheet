@@ -53,10 +53,15 @@ function sq() {
 - I put this in my ~/.bashrc
 
 
-## Screen
+## Screen, bug fix
 - Screen was crashing, not writing to /var/run/screen/, I found a workaround which changed the environment variable to have screen directory elsewhere
 - I put this in ~/.bashrc
 ```bash
 mkdir ~/.screen && chmod 700 ~/.screen
 export SCREENDIR=$HOME/.screen
+```
+to run screen
+
+```bash
+screen -S [newsession]
 ```
