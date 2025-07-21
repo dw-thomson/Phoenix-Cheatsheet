@@ -46,12 +46,12 @@ a100cpu, icelake
 ```
 #SBATCH --partition=saigenci_normal
 
-# I made an squeue alian 'sq' to change formatting
+# I made an squeue alias 'sq' to change formatting
 function sq() {
  squeue -u a1205810 --all --format='%.10i %.15N %.20P %.15u %.10T %.12M %.12l %.6D %.5C %.10c %.10m %.10r %.j' $* | column
 }
 - I put this in my ~/.bashrc
-
+- this prints out progress of nextflow jobs nicely
 
 ## Screen, bug fix
 - Screen was crashing, not writing to /var/run/screen/, I found a workaround which changed the environment variable to have screen directory elsewhere
