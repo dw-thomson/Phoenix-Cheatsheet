@@ -53,7 +53,7 @@ function sq() {
 - I put this in my ~/.bashrc
 - this prints out progress of nextflow jobs nicely
 
-## Screen, bug fix
+# Screen, bug fix
 - Screen was crashing, not writing to /var/run/screen/, I found a workaround which changed the environment variable to have screen directory elsewhere
 - I put this in ~/.bashrc
 ```bash
@@ -66,7 +66,7 @@ to run screen
 screen -S [newsession]
 ```
 
-## mounting HPC to mac using sshfs
+# mounting HPC to mac using sshfs
 - on mac
 download macfuse and sshfs
 https://macfuse.github.io/
@@ -83,3 +83,4 @@ Please open the Privacy & Security System Settings and allow loading system soft
 
 Then try mounting the volume again.
 ```
+- needed to follow prompts to change system settings but it worked fine.
