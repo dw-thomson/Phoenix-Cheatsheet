@@ -84,3 +84,8 @@ Please open the Privacy & Security System Settings and allow loading system soft
 Then try mounting the volume again.
 ```
 - needed to follow prompts to change system settings but it worked fine.
+
+- need to unmount after use
+```bash
+sudo umount -f sshfs/
+```
