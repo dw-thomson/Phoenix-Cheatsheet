@@ -65,3 +65,21 @@ to run screen
 ```bash
 screen -S [newsession]
 ```
+
+## mounting HPC to mac using sshfs
+- on mac
+download macfuse and sshfs
+https://macfuse.github.io/
+
+```bash
+mkdir /tmp/sshfs
+cd /tmp/sshfs
+# sshfs username@remote:/remote/directory /mount/point
+sshfs a1205810@phoenix-login1.adelaide.edu.au:/home/a1205810/projects/SAGCQA1671_ATACseq_Geri/nfATACseq/outs_nfATACseq /tmp/sshfs
+```
+- I got a warning
+```
+Please open the Privacy & Security System Settings and allow loading system software from developer "Benjamin Fleischer". A restart might be required before the system extension can be loaded.
+
+Then try mounting the volume again.
+```
