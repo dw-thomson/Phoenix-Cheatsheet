@@ -87,5 +87,5 @@ Then try mounting the volume again.
 
 - need to unmount after use
 ```bash
-sudo umount -f sshfs/
+sudo umount -f /tmp/sshfs
 ```
