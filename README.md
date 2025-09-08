@@ -89,3 +89,20 @@ Then try mounting the volume again.
 ```bash
 sudo umount -f /tmp/sshfs
 ```
+
+# Directory Structure
+- useful resource <https://wiki.adelaide.edu.au/hpc/Phoenix_data_management>
+- where to write jobs on phoenix?
+```
+1	/home/<userid> 10GB
+2	/hpcfs/users/<userid> 1TB
+3 /hpcfs/groups/<groupid> 60TB
+4	/uofaresstor/<group> 100TB
+```
+- not meant to use /home for running jobs, this should be on /hpcfs/
+- /uofaresstor/ is a mounted drive, can't run jobs from here
+ 
+- disk usage, this command is more direct than using 'df' or 'du' 
+```bash
+rcdu
+```
