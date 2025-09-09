@@ -101,8 +101,28 @@ sudo umount -f /tmp/sshfs
 ```
 - not meant to use /home for running jobs, this should be on /hpcfs/
 - /uofaresstor/ is a mounted drive, can't run jobs from here
+
+# disk quotas
  
-- disk usage, this command is more direct than using 'df' or 'du' 
+- disk usage, 
+- this command is more specific than using 'df' or 'du' 
 ```bash
-rcdu
+(base) [a1205810@p2-log-1 ~]$ rcdu
+========================================================================================================================
+Disk usage for  Daniel Wyville Thomson (a1205810)
+------------------------------------------------------------------------------------------------------------------------
+  /home :                         4.28 TiB of   12.00 GiB ( 36550.5% )
+  /hpcfs (group quota) 
+    a1205810 :                   497.62 MiB of 1000.00 GiB (  0.0% )              208 of    1100000 files (  0.0% )
+    phoenix-hpc-achinger :           35.64 TiB of   58.59 TiB ( 60.8% )           215411 of   67584000 files (  0.3% )
+
+
+ /hpcfs quota are not tied to a specific folder but instead linked to the above-mentioned groups. If one of your group 
+quota is over the limit but it shows discrepancy with specific folder, please follow this wiki link for 
+instructions
+ https://wiki.adelaide.edu.au/hpc/Disk_usage_discrepancy   
+========================================================================================================================
 ```
+
+changing group permission is an easy way of freeing up disk space
+- I feel like this can be exploted. Eg by putting everything under a different group
