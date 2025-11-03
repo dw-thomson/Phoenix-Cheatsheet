@@ -123,6 +123,14 @@ instructions
  https://wiki.adelaide.edu.au/hpc/Disk_usage_discrepancy   
 ========================================================================================================================
 ```
-
-changing group permission is an easy way of freeing up disk space
-- I feel like this can be exploted. Eg by putting everything under a different group
+Managing Disk quotas
+- since 'disk quota's are calculated by 'group' permissions
+- so changing the 'group' can move the quota away from an individuals quote (1TB) to the groups (60TB), eg
+```bash
+chmod -R phoenix-hpc-achinger [directory]
+```
+but nonetheless, files will need to be deleted to keep under disk space quota.
+```bash
+find ./ -size +10G | xargs rm
+```
+- I will routinely delete all temp files and often all large files I don't immediately need (e.g. bams).
