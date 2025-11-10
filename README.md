@@ -134,3 +134,15 @@ but nonetheless, files will need to be deleted to keep under disk space quota.
 find ./ -size +10G | xargs rm
 ```
 - I will routinely delete all temp files and often all large files I don't immediately need (e.g. bams).
+
+# Data storage R drive
+moving data from R drive, scp can be really slow, can run from screen but can't sent up a slurm script. Also it seems like soft links don't work
+the best way I've found for moving large volumes from R drive is filesender
+e.g.
+```bash
+python /home/a1205810/bin/filesender/filesender.py -v -u [user email] -a [apikey] -r [recipient email] [file]
+```
+file sender needs to be set up beforehand. (I have a git repor for that.)
+
+
+
