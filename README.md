@@ -18,8 +18,12 @@ ssh a1205810@phoenix-login1.adelaide.edu.au
 alias phoenix='ssh a1205810@phoenix-login1.adelaide.edu.au'
 ```
 # Slurm job submission
-
+- to run a slurm script, 
+```bash
+sbatch script.sh
+```
 example slurm header 1
+- script.sh
 ```bash
 #!/bin/bash
 #SBATCH -p batch        	                                # partition (this is the queue your job will be added to) 
@@ -28,7 +32,6 @@ example slurm header 1
 #SBATCH --time=01:00:00    	                                # time allocation, which has the format (D-HH:MM:SS), here set to 1 hour
 #SBATCH --mem=4GB         	                                # specify the memory required per node (here set to 4 GB)
 #SBATCH --partition=icelake					# other options include a100cpu,saigenci_normal. These need to be granted access to	
-
 # Execute the program (Here, the program is sequential)
 ./my_sequential_program  	                                # your software with any arguments
 
